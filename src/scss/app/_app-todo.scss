@@ -1,0 +1,135 @@
+.box-todo {
+  & .box-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    & .box-title {
+      & h3 {
+        font-size: 24px;
+      }
+    }
+  }
+  & .box-todo-list {
+    & .box-content-todo {
+      margin-bottom: 15px;
+      padding: 8px 24px;
+      border-radius: 40px;
+      background-color: $white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 40px;
+      box-shadow: 0px 0px 20px 0px #00000008;
+
+      & .form-checkbox {
+        display: flex;
+        align-items: center;
+
+        & input[type="checkbox"] {
+          appearance: none;
+          -webkit-appearance: none;
+          height: 22px;
+          width: 22px;
+          background-color: $white;
+          border: 2px solid $primary;
+          border-radius: 6px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          outline: none;
+
+          &::after {
+            font-family: "Font Awesome 6 Free";
+            content: "\f00c";
+            font-weight: 900;
+            font-size: 14px;
+            color: $white;
+            display: none;
+          }
+          &:checked {
+            background-color: $primary;
+          }
+          &:checked::after {
+            display: block;
+          }
+        }
+
+        & label {
+          margin-left: 10px;
+          font-size: 16px;
+          color: #2e2e2e;
+          overflow: hidden !important;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1 !important;
+
+          &.dash {
+            text-decoration: line-through;
+            color: #a9a9a9;
+
+            @media (max-width: 767px) {
+              max-width: 300px;
+            }
+
+            @media (max-width: 576px) {
+              max-width: 200px;
+            }
+          }
+          // text-decoration: line-through;
+        }
+      }
+      & .form-input {
+        width: 100%;
+        & input[type="text"] {
+          font-size: 16px;
+          border: unset;
+          font-family: "Roboto", sans-serif;
+          width: 100%;
+          &:focus-visible {
+            outline: 0px;
+          }
+        }
+      }
+      & .box-btn-save {
+        margin-left: 15px;
+      }
+      & .more {
+        position: relative;
+        & .btn-more {
+          display: flex;
+          cursor: pointer;
+          & div {
+            margin: 1px;
+          }
+        }
+
+        & .dropdown-menu {
+          min-width: 100px;
+          position: absolute;
+          right: 0;
+          width: 100%;
+          margin-top: 5px;
+          padding: 5px 0;
+          background-color: $white;
+          border-radius: 5px;
+          box-shadow: 0px 0px 8px 0px #0000001a;
+          z-index: 999;
+
+          & .item {
+            padding: 10px 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            border-radius: 5px;
+
+            &.danger {
+              color: #e07c7c;
+            }
+          }
+        }
+      }
+    }
+  }
+}

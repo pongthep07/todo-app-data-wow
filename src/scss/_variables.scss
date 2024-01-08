@@ -1,0 +1,57 @@
+$body-main-bg: #d1d0d9;
+$bg-progress: #e07c7c;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 750px,
+  lg: 960px,
+  xl: 1170px,
+) !default;
+
+@mixin container($breakpoint) {
+  max-width: map-get($container-max-widths, $breakpoint);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.myContainer {
+  width: 100%;
+
+  @include container(sm);
+
+  @media (min-width: 576px) {
+    @include container(md);
+  }
+
+  @media (min-width: 768px) {
+    @include container(lg);
+  }
+
+  @media (min-width: 992px) {
+    @include container(xl);
+  }
+}
+
+$cyan: #49b6d6 !default;
+$white: #ffffff !default;
+$green: #32a932 !default;
+$indigo: #8753de !default;
+$lime: #90ca4b !default;
+$light: #f2f3f4 !default;
+$orange: #f59c1a !default;
+$purple: #727cb6 !default;
+$pink: #fb5597 !default;
+$red: #d84e52 !default;
+$silver: #b6c2c9 !default;
+$teal: #69bb59 !default;
+$white: #ffffff !default;
+$yellow: #ffd900 !default;
+$gray: #6c757d !default;
+$black: #3b3b3b !default;
+
+$primary: #585292 !default;
+$secondary: $gray !default;
+$success: $teal !default;
+$info: $cyan !default;
+$warning: $orange !default;
+$danger: $red !default;
